@@ -8,15 +8,12 @@ function sortear() {
 
   for (index = 0; index < quantidade; index++) {
     numero = obterNumeroAleatorio(de, ate);
+
+    while (sorteados.includes(numero)) {
+      numero = obterNumeroAleatorio(de, ate);
+    }
+
     sorteados.push(numero);
-//    if (!sorteados.includes(numero)) {
-//      sorteados.push(numero);
-//    } else {
-//     numero = obterNumeroAleatorio(de, ate);
-//    }
-//
-//    Não consegui resolver de forma que ele 
-//    preenchesse o sorteados com a quantidade solicitada
   }
   
   let resultado = document.getElementById('resultado');
